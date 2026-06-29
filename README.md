@@ -7,9 +7,9 @@ has_toc: false
 render_with_liquid: false
 ---
 
-# Pinokio 8.0.0 Candidate Beta
+# Download Pinokio 8.0.0 Candidate Beta
 
-Download at https://github.com/peanutcocktail/pinokio/releases/tag/v7.5.14
+Download at [https://github.com/peanutcocktail/pinokio/releases/tag/v7.5.14](https://github.com/peanutcocktail/pinokio/releases/tag/v7.5.14)
 
 # Migrate to Open License Conda
 

@@ -1,0 +1,86 @@
+body {
+  text-rendering: optimizeLegibility;
+}
+
+.main {
+  background:
+    linear-gradient(#fbfbfa 0, #fbfbfa 18rem, transparent 18rem),
+    radial-gradient(circle at top left, rgba(0, 106, 220, 0.08), transparent 22rem),
+    #fbfbfa;
+}
+
+.main-header {
+  border-bottom-color: rgba(17, 17, 17, 0.08);
+}
+
+.site-title,
+.site-button {
+  color: #111111;
+}
+
+.site-button {
+  border-color: rgba(17, 17, 17, 0.12);
+  border-radius: 8px;
+}
+
+.main-content {
+  max-width: 58rem;
+  padding-top: 3.5rem;
+}
+
+.main-content h1:first-child {
+  max-width: 48rem;
+  margin-bottom: 2.5rem;
+  font-size: 2.25rem;
+  line-height: 1.12;
+}
+
+.main-content h1:not(:first-child) {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.main-content h2 {
+  margin-top: 2rem;
+}
+
+.main-content img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0 1.5rem;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.main-content p > img:only-child {
+  margin-top: 0.5rem;
+}
+
+.main-content code {
+  border-radius: 5px;
+}
+
+.main-content .highlight,
+.main-content pre.highlight {
+  border-radius: 8px;
+}
+
+.site-footer {
+  color: #6f7177;
+}
+
+@media (min-width: 50rem) {
+  .main-content h1:first-child {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 31.25rem) {
+  .main-content {
+    padding-top: 2rem;
+  }
+}

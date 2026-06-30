@@ -10,7 +10,7 @@ section_nav_depth: 2
 
 # Download Pinokio 8.0.0 Candidate Beta
 
-Download at [https://github.com/peanutcocktail/pinokio/releases/tag/v7.5.19](https://github.com/peanutcocktail/pinokio/releases/tag/v7.5.19)
+Download at [https://github.com/peanutcocktail/pinokio/releases/tag/v7.5.21](https://github.com/peanutcocktail/pinokio/releases/tag/v7.5.21)
 
 # Migrate to Open License Conda
 
@@ -214,7 +214,7 @@ Pinokio 8.0.0 brings the main product surfaces into one visual system. Home, app
 
 ## Plugins Page
 
-Plugins now appear as managed tools grouped by how they launch. Terminal plugins run inside Pinokio, while desktop plugins launch externally. Bundled tools such as OpenAI Codex, Claude Code, Antigravity, Qwen Code, VS Code, Cursor, Windsurf, and Codex Desktop are visible from the same page.
+Plugins now appear as managed tools grouped by how they launch. Terminal plugins run inside Pinokio, while desktop plugins launch externally.
 
 ![Plugins page with terminal and desktop tool groups](media/plugins-agent-tools.png)
 
@@ -706,7 +706,7 @@ Plugin `run`, `install`, `uninstall`, `update`, and `installed` actions can now 
 
 ### Additional plugins
 
-This release adds bundled tool entries for:
+This release bundles managed tool entries for:
 
 - Antigravity CLI
 - Antigravity CLI Auto
@@ -716,11 +716,8 @@ This release adds bundled tool entries for:
 - Claude Code
 - Claude Code Auto
 - Claude Desktop
-- Qwen Code
-- Crush
 - VS Code
 - Cursor
-- Windsurf
 
 ## Native Login
 
@@ -736,5 +733,52 @@ Pinokio now ships managed skills that can be synced into local agent skill folde
 
 # Versions
 
-## 7.5.20
+## 7.5.21
 
+### Fix Antigravity CLI plugin
+
+Antigravity CLI now installs and runs through Pinokio's managed `agy` binary instead of relying on the old broken CLI path. Install and update download the official Antigravity release asset, verify the release digest metadata, place the binary under Pinokio's managed `bin`, and route missing installs back to the plugin install page.
+
+![antigravity](media/antigravity.png)
+
+### Display plugin description metadata on the Dev page
+
+The Dev page now shows plugin description metadata directly in the Terminal Apps and Desktop Apps lists. Plugin-provided descriptions appear under each tool, and plugin apps are listed before the Project Shell so users can choose an agent or editor without scanning past generic terminal entries first.
+
+![Dev page plugin descriptions](media/dev_detail.png)
+
+### Clean up default plugins
+
+The default plugin bundle is trimmed for this beta. Qwen Code, Crush, and Windsurf are removed from the bundled defaults for now, leaving the built-in list focused on OpenAI Codex, Claude Code, Antigravity CLI, VS Code, Cursor, Codex Desktop, and Claude Desktop.
+
+![Cleaned default plugin list](media/plugins-agent-tools.png)
+
+### Add mobile bottom-row window controls
+
+The mobile footer now carries the app-window controls that previously required desktop width: Home, Back, Forward, Refresh, vertical split, horizontal split, New window, and Close pane when the current pane can be closed.
+
+![Mobile home layout with footer navigation](media/mobileview.gif)
+
+### Keep Home row position after stopping an app
+
+Stopping an app from Home now updates the row in place. The app no longer jumps to the bottom of the list just because its running state changed, so users can stop a process without losing their position in the current sort order.
+
+![preserve](media/preserve.gif)
+
+### Redesign window splitter modal
+
+The vertical and horizontal split controls now open a redesigned pane picker. Users can choose a running app/process, pick Run or Dev for an installed app, or enter a local URL before opening the new pane.
+
+![Redesigned window splitter modal](media/splitter-modal-redesign.png)
+
+### Animate sidebar toggle transition
+
+The sidebar toggle now animates between expanded and collapsed states, so the layout change feels connected to the control instead of snapping instantly.
+
+![Sidebar toggle animation](media/sidebar_toggle.gif)
+
+### Auto-select default script when enabling Autolaunch
+
+If a user turns `Start with Pinokio` on before choosing a script, Pinokio now selects the app's menu default automatically when one exists. This removes the old warning-only path for launchers that already declare a safe default script, while still asking the user to choose when no default script is available.
+
+![Autolaunch toggle](media/autolaunch_toggle.gif)
